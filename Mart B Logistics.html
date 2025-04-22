@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mart Ban Logistics - Your Reliable Delivery Partner</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .logo-text span {
+            font-size: 14px;
+            color: #ffcc00;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .cta-button {
+            background-color: #ffcc00;
+            color: #003366;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+            color: #003366;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
+                        url('https://example.com/logistics-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-buttons .cta-button {
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .secondary-button:hover {
+            background-color: white;
+            color: #003366;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .learn-more {
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 5px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            color: #003366;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            background-color: #003366;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info h3 {
+            color: #003366;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            color: #ffcc00;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .contact-form {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            color: #003366;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #002244;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #002244;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #ffcc00;
+        }
+
+        .footer-logo p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .service-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Logistics 1.jpeg" alt="Mart Ban Logistics Logo">
+                <div class="logo-text">
+                    <h1>Mart Ban Logistics</h1>
+                    <span>Delivering Excellence Across Ghana</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#tracking">Tracking</a></li>
+                    <li><a href="#contact" class="cta-button">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Reliable Logistics Solutions in Accra</h2>
+            <p>Mart Ban Logistics provides efficient, secure, and timely delivery services across Ghana and beyond. Trust us to handle your cargo with care and professionalism.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="cta-button">Our Services</a>
+                <a href="#contact" class="secondary-button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Logistics Services</h2>
+                <p>We offer comprehensive logistics solutions tailored to meet your business and personal shipping needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="modes-of-transportation-explained.jpg" alt="Freight Services">
+                    <div class="service-content">
+                        <h3>Freight Services</h3>
+                        <p>Efficient freight solutions by air, sea, and land. We handle all your cargo needs with care and precision.</p>
+                        <a href="#" class="learn-more">Learn more</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="for-4-main-functions-of-warehouse-1200x649-1.jpg" alt="Warehousing">
+                    <div class="service-content">
+                        <h3>Warehousing</h3>
+                        <p>Secure storage solutions with state-of-the-art facilities in Accra. Short or long-term options available.</p>
+                        <a href="#" class="learn-more">Learn more</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="63a99832ddf2277ef743f5e4_Last-Mile-Delivery.webp" alt="Last-Mile Delivery">
+                    <div class="service-content">
+                        <h3>Last-Mile Delivery</h3>
+                        <p>Fast and reliable delivery to your doorstep anywhere in Accra and major Ghanaian cities.</p>
+                        <a href="#" class="learn-more">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="What-is-the-Difference-Between-a-Courier-Service-and-a-Logistics-Service.webp" alt="About Mart Ban Logistics">
+            </div>
+            <div class="about-content">
+                <h2>About Mart Ban Logistics</h2>
+                <p>Founded in 2010, Mart Ban Logistics has grown to become one of Accra's most trusted logistics providers. We specialize in customized shipping solutions for businesses and individuals.</p>
+                <p>Our team of experienced professionals is committed to delivering your goods safely, on time, and with the highest level of customer service.</p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">10+</div>
+                        <div>
+                            <h4>Years of Experience</h4>
+                            <p>Serving clients across Ghana and beyond</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">24/7</div>
+                        <div>
+                            <h4>Customer Support</h4>
+                            <p>Our team is always available to assist you</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">100%</div>
+                        <div>
+                            <h4>Reliability</h4>
+                            <p>We deliver on our promises every time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for any inquiries or to request a quote for our services.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Industrial Area, Accra, Ghana</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+233 24 567 1832</p>
+                                <p>+233 53 050 5031</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@martbanlogistics.com</p>
+                                <p>support@martbanlogistics.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p>Saturday: 9:00 AM - 2:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Tracking Form Section -->
+      <section class="tracking-form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tracking</h2>
+                <p>Track the status of your shipment by entering your tracking number below.</p>
+            </div>
+            <div class="tracking-form-container">
+                <form class="tracking-form" id="trackingForm">
+                    <div class="form-group">
+                        <label for="trackingNumber">Tracking Number</label>
+                        <input type="text" id="trackingNumber" name="trackingNumber" placeholder="e.g. MBL123456789" required>
+                    </div>
+                    <button type="submit" class="track-button">Track Shipment</button>
+                </form>
+            </div>
+        </div>
+     </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3>Mart Ban Logistics</h3>
+                        <p>Your trusted logistics partner in Accra and beyond.</p>
+                    </div>
+                    <div class="social-links">
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Links</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: #333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Individual platform colors */
+        .social-links .facebook { background-color: #3b5998; }
+        .social-links .twitter { background-color: #1da1f2; }
+        .social-links .instagram { 
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        .social-links .linkedin { background-color: #0077b5; }
+        .social-links .youtube { background-color: #ff0000; }
+        .social-links .whatsapp { background-color: #25d366; }
+    </style>
+</head>
+<body>
+    <div class="social-links">
+        <a href="https://www.facebook.com/aforlabi" class="facebook" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/strivehardest" class="twitter" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aforlabi" class="linkedin" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.youtube.com/" class="youtube" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://wa.me/233530505031" class="whatsapp" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</body>
+</html>
+
+
+
+
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Tracking</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Freight Services</a></li>
+                            <li><a href="#">Warehousing</a></li>
+                            <li><a href="#">Last-Mile Delivery</a></li>
+                            <li><a href="#">Customs Clearance</a></li>
+                            <li><a href="#">Supply Chain Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping Rates</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Mart Ban Logistics. All Rights Reserved. <p>Crafted with love by <a href="http://www.celestialwebsolutions.net" target="_blank" rel="noopener noreferrer">Celestial Web Solutions</a></p></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
